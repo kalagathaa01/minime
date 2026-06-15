@@ -242,6 +242,59 @@
     .contact-card p { font-size: 0.82rem; color: var(--muted); }
     .contact-card a.btn { margin-top: auto; }
 
+    /* ── CHOOSE YOUR CREATION ── */
+    .choose { background: var(--white); }
+    .choose-grid {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 28px;
+    }
+    .choose-card {
+      border-radius: 28px; overflow: hidden;
+      border: 2px solid var(--blush);
+      transition: transform 0.25s, box-shadow 0.25s;
+      background: var(--cream);
+      display: flex; flex-direction: column;
+    }
+    .choose-card:hover { transform: translateY(-6px); box-shadow: 0 20px 48px rgba(180,100,80,0.16); }
+    .choose-card-top {
+      padding: 48px 36px 36px;
+      display: flex; flex-direction: column; align-items: center; text-align: center;
+      gap: 14px;
+    }
+    .choose-card:first-child .choose-card-top { background: linear-gradient(160deg, #FDE8E0 0%, #F5D0C4 100%); }
+    .choose-card:last-child  .choose-card-top { background: linear-gradient(160deg, #EAE0F8 0%, #D9CFF0 100%); }
+    .choose-big-icon { font-size: 4rem; line-height: 1; }
+    .choose-card h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.5rem; color: var(--bark); font-weight: 700;
+    }
+    .choose-card .choose-tagline { font-size: 0.88rem; color: var(--muted); font-style: italic; }
+    .choose-card-body { padding: 28px 32px 32px; flex: 1; }
+    .choose-card-body p { font-size: 0.9rem; color: var(--text); margin-bottom: 20px; line-height: 1.7; }
+    .choose-perks { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+    .choose-perks li {
+      display: flex; align-items: flex-start; gap: 10px;
+      font-size: 0.85rem; color: var(--text);
+    }
+    .choose-perks li::before { content: '✦'; color: var(--rose); font-size: 0.65rem; margin-top: 4px; flex-shrink: 0; }
+    .choose-price-badge {
+      display: inline-block; margin-top: 22px;
+      background: var(--rose); color: #fff;
+      border-radius: 999px; padding: 8px 24px;
+      font-size: 1rem; font-weight: 700;
+      font-family: 'Playfair Display', serif;
+    }
+    .choose-or {
+      display: flex; align-items: center; justify-content: center;
+      font-size: 0.75rem; letter-spacing: 0.18em; text-transform: uppercase;
+      color: var(--muted); gap: 14px; margin: 4px 0;
+    }
+    .choose-or::before, .choose-or::after {
+      content: ''; flex: 1; height: 1px; background: var(--blush);
+    }
+    @media (max-width: 680px) {
+      .choose-grid { grid-template-columns: 1fr; }
+    }
+
     /* ── FOOTER ── */
     footer {
       background: var(--bark); color: rgba(255,255,255,0.6);
@@ -272,6 +325,7 @@
   <ul class="nav-links">
     <li><a href="#includes">Includes</a></li>
     <li><a href="#details">Details</a></li>
+    <li><a href="#choose">Choose</a></li>
     <li><a href="#register">Register</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
@@ -413,6 +467,59 @@
   </div>
 </section>
 
+<!-- CHOOSE YOUR CREATION -->
+<section class="choose" id="choose">
+  <div class="section-inner">
+    <p class="section-label">Pick Your Style</p>
+    <h2>What Will You Create?</h2>
+    <div class="choose-grid">
+
+      <!-- KEYCHAIN -->
+      <div class="choose-card">
+        <div class="choose-card-top">
+          <div class="choose-big-icon">🔑💕</div>
+          <h3>Couple Keychain</h3>
+          <p class="choose-tagline">A tiny duo you carry everywhere</p>
+        </div>
+        <div class="choose-card-body">
+          <p>Sculpt two adorable miniature figures — customised to look like you and your partner (or bestie!) — and turn them into a matching keychain set to take home.</p>
+          <ul class="choose-perks">
+            <li>2 clay figurines per set (him &amp; her / any combo)</li>
+            <li>Customise outfits, hair, and skin tone</li>
+            <li>Fitted with keychain ring &amp; clasp</li>
+            <li>Glazed &amp; finished on the day</li>
+            <li>Great for couples &amp; best friends</li>
+          </ul>
+          <div class="choose-price-badge">₹1,699 / person</div>
+        </div>
+      </div>
+
+      <div class="choose-or">or</div>
+
+      <!-- MINIATURE -->
+      <div class="choose-card">
+        <div class="choose-card-top">
+          <div class="choose-big-icon">🪆✨</div>
+          <h3>Mini Me Figurine</h3>
+          <p class="choose-tagline">A tiny you, made by you</p>
+        </div>
+        <div class="choose-card-body">
+          <p>Create a standalone clay miniature that looks just like you — your face, your style, your vibe. A one-of-a-kind keepsake to display or gift to someone special.</p>
+          <ul class="choose-perks">
+            <li>Full-body clay figurine (approx. 8–10 cm)</li>
+            <li>Personalise features, outfit &amp; accessories</li>
+            <li>Displayed on a small clay base</li>
+            <li>Glazed &amp; finished on the day</li>
+            <li>Perfect for beginners &amp; solo attendees</li>
+          </ul>
+          <div class="choose-price-badge">₹1,699 / person</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
 <!-- REGISTER -->
 <section id="register">
   <div class="section-inner">
@@ -425,7 +532,7 @@
         <h2>Secure Your Spot</h2>
         <p>Fill out the registration form and we'll confirm your seat within 24 hours. Payment details will be shared after confirmation.</p>
         <!-- ★ REPLACE THIS HREF WITH YOUR GOOGLE FORM LINK ★ -->
-        <a href="YOUR_GOOGLE_FORM_LINK_HERE" target="_blank" class="btn btn-register">Fill Registration Form →</a>
+        <a href="https://forms.gle/3AkZjBMmqyHkyofi7" target="_blank" class="btn btn-register">Fill Registration Form →</a>
         <p class="register-note">* Replace the link above with your actual Google Form URL</p>
       </div>
       <div class="register-right">
@@ -474,7 +581,7 @@
         <div class="contact-icon-wrap wa-bg">💬</div>
         <h3>WhatsApp Group</h3>
         <p>Join our community for updates, reminders, and workshop-day info</p>
-        <a href="YOUR_WHATSAPP_GROUP_LINK_HERE" target="_blank" class="btn btn-primary">Join the Group →</a>
+        <a href="https://chat.whatsapp.com/GDkOABfcQz9EbZQk9pv1vF?s=cl&p=a&ilr=2" target="_blank" class="btn btn-primary">Join the Group →</a>
       </div>
 
       <!-- ★ REPLACE WITH YOUR INSTAGRAM HANDLE ★ -->
@@ -490,7 +597,7 @@
         <div class="contact-icon-wrap em-bg">✉️</div>
         <h3>Email / DM</h3>
         <p>Have questions? Drop us a message and we'll get back to you soon</p>
-        <a href="mailto:YOUR_EMAIL_HERE" class="btn btn-outline">Send a Message</a>
+        <a href="mailto:kalagathaa01@gmail.com" class="btn btn-outline">Send a Message</a>
       </div>
 
     </div>
